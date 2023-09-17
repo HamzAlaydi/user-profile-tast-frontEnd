@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/profile/index.js", "src/app/user/profile/page.jsx", "components/MainDetails/index.jsx", "utils/hooks/fetchInfoFromAPI.ts", "utils/providers/Providers.client.js", "components/Form/UserProfileForm.test.js"],
   "exclude": ["node_modules"]
 }

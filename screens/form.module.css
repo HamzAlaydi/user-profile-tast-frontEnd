@@ -1,0 +1,10 @@
+.container {
+  padding-top: 1rem;
+}
+.title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #333030c2;
+}
