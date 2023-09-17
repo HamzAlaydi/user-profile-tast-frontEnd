@@ -15,7 +15,9 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import styles from "./form.module.css";
 
 interface InputFormProps {
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => void;
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   formData: any;
@@ -139,19 +141,20 @@ const InputForm: FC<InputFormProps> = ({
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
                 label="Join Date"
-                name="joinDate"
                 defaultValue={formData.joinDate}
                 format="MM-DD-YYYY"
                 formatDensity="spacious"
                 onChange={(date) =>
-                  handleChange({ target: { name: "joinDate", value: date } })
+                  handleChange({
+                    target: {
+                      name: "joinDate",
+                      value: date,
+                    },
+                  } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>)
                 }
                 slotProps={{
-                  textField: { sx: { width: "100%" }, size: "large" },
+                  textField: { sx: { width: "100%" }, size: "medium" },
                 }}
-                renderInput={(params: any) => (
-                  <TextField size="large" {...params} variant="outlined" />
-                )}
               />
             </LocalizationProvider>
           </Grid>
